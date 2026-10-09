@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!-- ============================================================
+  contact.html —— 联系我
+  技术栈：HTML + Tailwind CSS（CDN）+ 原生 JavaScript
+  本页包含：顶栏导航 / 页面标题 / 联系表单（仅前端展示，不提交存储数据）/ 联系方式 / 页脚
+  说明：本表单是"演示用"——点击提交后只做前端校验并弹出提示，不会把数据发到任何服务器。
+============================================================ -->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="联系李明 —— 品牌视觉、UI/UX 设计合作咨询" />
+  <title>联系我 · 李明作品集</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231e3a8a'/%3E%3Ctext x='16' y='22' font-size='18' font-family='Arial' font-weight='bold' fill='%23fff' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://miaoda.feishu.cn" />
+  <link href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#1e3a8a', light: '#3b82f6', dark: '#172554' },
+            mist: { DEFAULT: '#f5f7fa', dark: '#e5e7eb' }
+          },
+          fontFamily: {
+            sans: ['"Noto Sans SC"', 'PingFang SC', 'Microsoft YaHei', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    .site-header { transition: box-shadow .3s ease; }
+    .site-header.is-scrolled { box-shadow: 0 4px 20px rgba(30, 58, 138, .10); }
+    [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    [data-reveal].is-visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-slate-700 font-sans antialiased">
+
+  <!-- ================= 顶栏导航 ================= -->
+  <header class="site-header fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur">
+    <nav class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 font-extrabold text-xl text-primary">
+        <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-primary text-white">李</span>
+        <span>李明<span class="text-slate-400 font-normal text-sm hidden sm:inline">· 视觉设计师</span></span>
+      </a>
+
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <li><a href="index.html" class="text-slate-600 hover:text-primary transition-colors">首页</a></li>
+        <li><a href="works.html" class="text-slate-600 hover:text-primary transition-colors">作品案例</a></li>
+        <li><a href="about.html" class="text-slate-600 hover:text-primary transition-colors">关于我</a></li>
+        <li><a href="contact.html" class="text-primary font-semibold">联系</a></li>
+      </ul>
+
+      <div class="hidden md:block">
+        <a href="contact.html" class="inline-block px-5 py-2 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary-dark transition-colors">预约合作</a>
+      </div>
+
+      <button data-menu-toggle type="button" aria-expanded="false" aria-label="打开菜单"
+        class="md:hidden text-primary p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </nav>
+
+    <div data-mobile-menu class="hidden md:hidden border-t border-slate-100 bg-white px-5 py-4">
+      <ul class="flex flex-col gap-4 text-base font-medium">
+        <li><a href="index.html" class="text-slate-600">首页</a></li>
+        <li><a href="works.html" class="text-slate-600">作品案例</a></li>
+        <li><a href="about.html" class="text-slate-600">关于我</a></li>
+        <li><a href="contact.html" class="text-primary font-semibold">联系</a></li>
+      </ul>
+      <a href="contact.html" class="mt-4 block text-center px-5 py-2.5 rounded-lg bg-primary text-white text-sm font-semibold">预约合作</a>
+    </div>
+  </header>
+
+  <main class="pt-24 md:pt-28">
+    <!-- ================= 页面标题区 ================= -->
+    <section class="bg-mist py-14">
+      <div class="max-w-6xl mx-auto px-5">
+        <span data-reveal class="text-primary font-semibold text-sm">联系我</span>
+        <h1 data-reveal class="mt-2 text-3xl md:text-4xl font-extrabold text-slate-900">一起聊聊你的项目</h1>
+        <p data-reveal class="mt-3 max-w-xl text-slate-500 leading-relaxed">无论是合作咨询、项目报价，还是单纯想交流设计，都欢迎通过下面的方式找到我。</p>
+      </div>
+    </section>
+
+    <section class="py-14">
+      <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-[2fr_1fr] gap-10">
+        <!-- ================= 联系表单（仅前端展示） ================= -->
+        <div data-reveal class="bg-white rounded-2xl border border-slate-100 shadow-sm p-7 md:p-10">
+          <h2 class="text-xl font-bold text-slate-900">发送留言</h2>
+          <p class="mt-1 text-sm text-slate-500">填写下表（演示站点，数据不会真正提交）。</p>
+
+          <form data-contact-form class="mt-8 space-y-5">
+            <!-- 称呼 -->
+            <div>
+              <label for="name" class="block text-sm font-medium text-slate-700">您的称呼 <span class="text-red-500">*</span></label>
+              <input type="text" id="name" name="name" placeholder="如何称呼您"
+                class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
+            </div>
+
+            <!-- 邮箱 -->
+            <div>
+              <label for="email" class="block text-sm font-medium text-slate-700">邮箱 <span class="text-red-500">*</span></label>
+              <input type="email" id="email" name="email" placeholder="you@example.com"
+                class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
+            </div>
+
+            <!-- 项目类型（下拉选择） -->
+            <div>
+              <label for="subject" class="block text-sm font-medium text-slate-700">合作类型</label>
+              <select id="subject" name="subject"
+                class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition bg-white">
+                <option value="">请选择合作类型</option>
+                <option value="brand">品牌视觉设计</option>
+                <option value="product">UI / 数字产品设计</option>
+                <option value="illustration">插画与图形</option>
+                <option value="other">其他咨询</option>
+              </select>
+            </div>
+
+            <!-- 留言内容 -->
+            <div>
+              <label for="message" class="block text-sm font-medium text-slate-700">留言内容 <span class="text-red-500">*</span></label>
+              <textarea id="message" name="message" rows="5" placeholder="简单描述您的项目背景、需求和时间安排"
+                class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition resize-y"></textarea>
+            </div>
+
+            <!-- 提交按钮 -->
+            <button type="submit"
+              class="w-full md:w-auto px-8 py-3 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary-dark transition-colors">发送留言</button>
+          </form>
+        </div>
+
+        <!-- ================= 联系方式信息卡 ================= -->
+        <div data-reveal class="space-y-6">
+          <div class="rounded-2xl bg-white border border-slate-100 shadow-sm p-7">
+            <h3 class="font-bold text-slate-900">直接联系</h3>
+            <ul class="mt-4 space-y-4 text-sm text-slate-500">
+              <li class="flex items-start gap-3">
+                <span class="inline-flex w-9 h-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                </span>
+                <span><span class="block text-slate-400 text-xs">邮箱</span>hello@example.com</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="inline-flex w-9 h-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2c1 2 3 4 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+                </span>
+                <span><span class="block text-slate-400 text-xs">电话</span>+86 138-0000-0000</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="inline-flex w-9 h-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                </span>
+                <span><span class="block text-slate-400 text-xs">地址</span>北京市朝阳区（示例）</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl bg-primary text-white p-7">
+            <h3 class="font-bold">合作小贴士</h3>
+            <p class="mt-3 text-sm text-white/75 leading-relaxed">请在留言中尽量说明项目类型、时间节点与大致预算，能让我更快给出有针对性的回应。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= 页脚 ================= -->
+  <footer class="bg-slate-900 text-slate-300">
+    <div class="max-w-6xl mx-auto px-5 py-14 grid md:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-2 font-extrabold text-xl text-white">
+          <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-primary text-white">李</span>
+          <span>李明</span>
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-slate-400">资深视觉与品牌设计师，用专业与热情帮助品牌被看见、被记住。</p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold">快捷导航</h4>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="index.html" class="hover:text-white transition-colors">首页</a></li>
+          <li><a href="works.html" class="hover:text-white transition-colors">作品案例</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">关于我</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">联系</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold">联系方式</h4>
+        <ul class="mt-4 space-y-2 text-sm text-slate-400">
+          <li>邮箱：hello@example.com</li>
+          <li>电话：+86 138-0000-0000</li>
+          <li>地址：北京市朝阳区（示例）</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-slate-800">
+      <div class="max-w-6xl mx-auto px-5 py-5 text-center text-xs text-slate-500">
+        © <span data-year>2026</span> 李明 · 保留所有权利
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast 提示容器 -->
+  <div data-toast-container class="fixed top-20 right-5 z-[80] flex flex-col gap-2"></div>
+
+  <!-- 共享交互脚本 -->
+  <script src="js/main.js"></script>
+</body>
+</html>
