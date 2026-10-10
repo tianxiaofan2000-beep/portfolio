@@ -165,11 +165,16 @@
     });
   }
 
-  /* ---------- 7. 联系表单（仅前端，不真正提交） ---------- */
+  /* ---------- 7. 联系表单：通过 FormSubmit 免费服务发送到站长邮箱 ---------- */
   var contactForm = document.querySelector('[data-contact-form]');
   if (contactForm) {
+    /* 接收邮箱：把留言发到这里。用 FormSubmit 的 AJAX 接口，不跳转页面 */
+    var CONTACT_EMAIL = '2682246988@qq.com';
+    var CONTACT_ENDPOINT = 'https://formsubmit.co/ajax/' + CONTACT_EMAIL;
+
     contactForm.addEventListener('submit', function (e) {
-      e.preventDefault(); /* 阻止真实提交 */
+      e.preventDefault(); /* 阻止默认跳转，改用 fetch 后台提交 */
+
       var name = contactForm.querySelector('[name="name"]').value.trim();
       var email = contactForm.querySelector('[name="email"]').value.trim();
       var message = contactForm.querySelector('[name="message"]').value.trim();
@@ -177,14 +182,36 @@
       /* 简单的前端校验 */
       if (!name) { showToast('请填写您的称呼', 'info'); return; }
       if (!email) { showToast('请填写您的邮箱', 'info'); return; }
-      /* 用正则粗略判断邮箱格式 */
       var emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailReg.test(email)) { showToast('邮箱格式似乎不正确', 'info'); return; }
       if (!message) { showToast('请填写您的留言内容', 'info'); return; }
 
-      /* 到这一步说明校验通过。因为是纯前端演示站，这里只提示，不发送数据 */
-      showToast('已收到您的留言（演示站，数据未上传）');
-      contactForm.reset();
+      /* 把表单里的字段（含 _subject、_captcha 隐藏项）打包 */
+      var data = new FormData(contactForm);
+
+      /* 提交按钮进入"发送中"状态，防止重复点击 */
+      var btn = contactForm.querySelector('[type="submit"]');
+      var originalText = btn.textContent;
+      btn.textContent = '发送中…';
+      btn.disabled = true;
+
+      fetch(CONTACT_ENDPOINT, { method: 'POST', body: data })
+        .then(function (res) { return res.json(); })
+        .then(function (json) {
+          if (json && json.success) {
+            showToast('留言发送成功，我会尽快回复您！');
+            contactForm.reset();
+          } else {
+            showToast('发送失败，请稍后再试', 'info');
+          }
+        })
+        .catch(function () {
+          showToast('网络异常，发送失败，请稍后再试', 'info');
+        })
+        .finally(function () {
+          btn.textContent = originalText;
+          btn.disabled = false;
+        });
     });
   }
 
