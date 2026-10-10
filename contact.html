@@ -3,7 +3,7 @@
   contact.html —— 联系我
   技术栈：HTML + Tailwind CSS（CDN）+ 原生 JavaScript
   本页包含：顶栏导航 / 页面标题 / 联系表单（仅前端展示，不提交存储数据）/ 联系方式 / 页脚
-  说明：本表单通过免费的 FormSubmit 服务，把客户填写的留言发送到站长邮箱（2682246988@qq.com）。
+  说明：本表单使用网站所在的 Netlify 平台的免费表单功能（Netlify Forms），客户留言会进入 Netlify 后台，并可配置邮件通知转发到站长邮箱（2682246988@qq.com）。
 ============================================================ -->
 <html lang="zh-CN">
 <head>
@@ -100,10 +100,9 @@
           <h2 class="text-xl font-bold text-slate-900">发送留言</h2>
           <p class="mt-1 text-sm text-slate-500">填写下表，留言会直接发送到我的邮箱。</p>
 
-          <form data-contact-form class="mt-8 space-y-5">
-            <!-- FormSubmit 隐藏配置：邮件主题、关闭验证码（方便客户直接提交） -->
-            <input type="hidden" name="_subject" value="网站新合作咨询" />
-            <input type="hidden" name="_captcha" value="false" />
+          <form data-contact-form name="contact" method="POST" data-netlify="true" class="mt-8 space-y-5">
+            <!-- Netlify Forms 必需的隐藏字段：声明表单名称，Netlify 据此在后台捕获提交 -->
+            <input type="hidden" name="form-name" value="contact" />
             <!-- 称呼 -->
             <div>
               <label for="name" class="block text-sm font-medium text-slate-700">您的称呼 <span class="text-red-500">*</span></label>

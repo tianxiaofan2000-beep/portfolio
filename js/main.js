@@ -165,15 +165,11 @@
     });
   }
 
-  /* ---------- 7. 联系表单：通过 FormSubmit 免费服务发送到站长邮箱 ---------- */
+  /* ---------- 7. 联系表单：使用 Netlify Forms，提交记录进 Netlify 后台并可配置邮件通知 ---------- */
   var contactForm = document.querySelector('[data-contact-form]');
   if (contactForm) {
-    /* 接收邮箱：把留言发到这里。用 FormSubmit 的 AJAX 接口，不跳转页面 */
-    var CONTACT_EMAIL = '2682246988@qq.com';
-    var CONTACT_ENDPOINT = 'https://formsubmit.co/ajax/' + CONTACT_EMAIL;
-
     contactForm.addEventListener('submit', function (e) {
-      e.preventDefault(); /* 阻止默认跳转，改用 fetch 后台提交 */
+      e.preventDefault(); /* 阻止默认跳转，改用 fetch 后台提交给 Netlify */
 
       var name = contactForm.querySelector('[name="name"]').value.trim();
       var email = contactForm.querySelector('[name="email"]').value.trim();
@@ -186,8 +182,8 @@
       if (!emailReg.test(email)) { showToast('邮箱格式似乎不正确', 'info'); return; }
       if (!message) { showToast('请填写您的留言内容', 'info'); return; }
 
-      /* 把表单里的字段（含 _subject、_captcha 隐藏项）打包 */
-      var data = new FormData(contactForm);
+      /* 把表单所有字段（含 form-name 隐藏项）转为 URL 编码提交，Netlify 会捕获它 */
+      var data = new URLSearchParams(new FormData(contactForm));
 
       /* 提交按钮进入"发送中"状态，防止重复点击 */
       var btn = contactForm.querySelector('[type="submit"]');
@@ -195,10 +191,15 @@
       btn.textContent = '发送中…';
       btn.disabled = true;
 
-      fetch(CONTACT_ENDPOINT, { method: 'POST', body: data })
-        .then(function (res) { return res.json(); })
-        .then(function (json) {
-          if (json && json.success) {
+      /* 提交到本站（部署在 Netlify 时由 Netlify 接收；本地 file:// 预览无法接收属正常现象） */
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: data.toString()
+      })
+        .then(function (res) { return res.ok; })
+        .then(function (ok) {
+          if (ok) {
             showToast('留言发送成功，我会尽快回复您！');
             contactForm.reset();
           } else {
@@ -206,7 +207,7 @@
           }
         })
         .catch(function () {
-          showToast('网络异常，发送失败，请稍后再试', 'info');
+          showToast('提交失败，请稍后再试', 'info');
         })
         .finally(function () {
           btn.textContent = originalText;
