@@ -9,11 +9,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="李明个人作品案例 —— 品牌视觉、UI/UX、插画等设计项目展示" />
-  <title>作品案例 · 李明作品集</title>
+  <meta name="description" content="筑巡工坊作品案例 —— 网站、独立站、小程序开发与品牌设计项目展示" />
+  <title>作品案例 · 筑巡工坊</title>
 
   <!-- 内联 SVG favicon -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231e3a8a'/%3E%3Ctext x='16' y='22' font-size='18' font-family='Arial' font-weight='bold' fill='%23fff' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231e3a8a'/%3E%3Ctext x='16' y='22' font-size='18' font-family='Arial' font-weight='bold' fill='%23fff' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://miaoda.feishu.cn" />
   <link href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -52,8 +52,8 @@
   <header class="site-header fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur">
     <nav class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-2 font-extrabold text-xl text-primary">
-        <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-primary text-white">李</span>
-        <span>李明<span class="text-slate-400 font-normal text-sm hidden sm:inline">· 视觉设计师</span></span>
+        <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-primary text-white">筑</span>
+        <span>筑巡工坊<span class="text-slate-400 font-normal text-sm hidden sm:inline">· 工程师 · 独立开发者</span></span>
       </a>
 
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
@@ -90,7 +90,7 @@
       <div class="max-w-6xl mx-auto px-5">
         <span data-reveal class="text-primary font-semibold text-sm">作品案例</span>
         <h1 data-reveal class="mt-2 text-3xl md:text-4xl font-extrabold text-slate-900">我的项目作品</h1>
-        <p data-reveal class="mt-3 max-w-xl text-slate-500 leading-relaxed">精选不同领域的代表性项目，点击筛选分类，或点击"查看详情"了解每个项目的更多信息。</p>
+        <p data-reveal class="mt-3 max-w-xl text-slate-500 leading-relaxed">以下为脱敏演示项目，展示我在网站、小程序与品牌设计方面的能力，点击筛选分类或"查看详情"了解项目。</p>
       </div>
     </section>
 
@@ -100,94 +100,94 @@
         <!-- 筛选按钮组：data-filter 与下方卡片的 data-category 对应 -->
         <div data-reveal class="flex flex-wrap gap-3 mb-10">
           <button data-filter="all" class="px-4 py-2 rounded-lg border text-sm font-semibold bg-primary text-white border-primary">全部</button>
-          <button data-filter="brand" class="px-4 py-2 rounded-lg border border-slate-300 text-sm font-semibold text-primary hover:border-primary transition-colors">品牌视觉</button>
-          <button data-filter="product" class="px-4 py-2 rounded-lg border border-slate-300 text-sm font-semibold text-primary hover:border-primary transition-colors">数字产品</button>
-          <button data-filter="illustration" class="px-4 py-2 rounded-lg border border-slate-300 text-sm font-semibold text-primary hover:border-primary transition-colors">插画图形</button>
+          <button data-filter="website" class="px-4 py-2 rounded-lg border border-slate-300 text-sm font-semibold text-primary hover:border-primary transition-colors">网站开发</button>
+          <button data-filter="miniprogram" class="px-4 py-2 rounded-lg border border-slate-300 text-sm font-semibold text-primary hover:border-primary transition-colors">小程序开发</button>
+          <button data-filter="design" class="px-4 py-2 rounded-lg border border-slate-300 text-sm font-semibold text-primary hover:border-primary transition-colors">品牌设计</button>
         </div>
 
         <!-- 作品网格：卡片上的 data-* 属性供筛选与弹窗读取 -->
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-          <!-- 案例 1：品牌视觉 -->
-          <article data-reveal data-category="brand" data-title="云集咖啡 · 品牌全案"
+          <!-- 案例 1：网站开发 -->
+          <article data-reveal data-category="website" data-title="山野茶事 · 品牌独立站"
             data-image="https://picsum.photos/seed/proj-1/900/600"
-            data-category-text="品牌视觉" data-desc="从品牌策略出发，完成云集咖啡的标志、色彩系统、包装、门店物料与品牌手册的完整设计，帮助品牌在三年内从单店扩张到 12 家门店。"
-            data-tags="标志设计, VI系统, 包装设计" class="group rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all bg-white">
-            <img src="https://picsum.photos/seed/proj-1/800/500" alt="云集咖啡项目占位图" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            data-category-text="网站开发" data-desc="从视觉设计到前端实现，为茶叶品牌搭建的产品展示独立站，支持商品浏览、在线咨询与订单表单，已正式上线运行。"
+            data-tags="独立站, 前端开发, 响应式" class="group rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all bg-white">
+            <img src="https://picsum.photos/seed/proj-1/800/500" alt="独立站项目占位图" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             <div class="p-6">
-              <span class="text-xs font-semibold text-primary">品牌视觉</span>
-              <h3 class="mt-2 text-lg font-bold text-slate-900">云集咖啡 · 品牌全案</h3>
-              <p class="mt-2 text-sm text-slate-500">从标志、色彩到包装的完整品牌体系。</p>
+              <span class="text-xs font-semibold text-primary">网站开发</span>
+              <h3 class="mt-2 text-lg font-bold text-slate-900">山野茶事 · 品牌独立站</h3>
+              <p class="mt-2 text-sm text-slate-500">从设计到开发的茶叶品牌独立站。</p>
               <button data-open-detail class="mt-4 text-sm font-semibold text-primary hover:text-primary-light">查看详情 →</button>
             </div>
           </article>
 
-          <!-- 案例 2：数字产品 -->
-          <article data-reveal data-category="product" data-title="智慧出行 App 改版"
+          <!-- 案例 2：小程序开发 -->
+          <article data-reveal data-category="miniprogram" data-title="社区生鲜 · 小程序商城"
             data-image="https://picsum.photos/seed/proj-2/900/600"
-            data-category-text="数字产品" data-desc="针对原有 App 信息层级混乱的问题，重新梳理信息架构与核心流程，并完成界面视觉升级。改版后核心流程完成率提升约 35%，用户好评率显著提高。"
-            data-tags="产品改版, 交互设计, 界面设计" class="group rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all bg-white">
-            <img src="https://picsum.photos/seed/proj-2/800/500" alt="智慧出行App项目占位图" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            data-category-text="小程序开发" data-desc="生鲜社区团购微信小程序，支持商品管理、下单、拼团、自提与配送，多期稳定运行，高峰期支撑上千单。"
+            data-tags="微信小程序, 商城, 拼团" class="group rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all bg-white">
+            <img src="https://picsum.photos/seed/proj-2/800/500" alt="小程序商城项目占位图" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             <div class="p-6">
-              <span class="text-xs font-semibold text-primary">数字产品</span>
-              <h3 class="mt-2 text-lg font-bold text-slate-900">智慧出行 App 改版</h3>
-              <p class="mt-2 text-sm text-slate-500">重构信息架构与界面视觉。</p>
+              <span class="text-xs font-semibold text-primary">小程序开发</span>
+              <h3 class="mt-2 text-lg font-bold text-slate-900">社区生鲜 · 小程序商城</h3>
+              <p class="mt-2 text-sm text-slate-500">生鲜社区团购小程序商城。</p>
               <button data-open-detail class="mt-4 text-sm font-semibold text-primary hover:text-primary-light">查看详情 →</button>
             </div>
           </article>
 
-          <!-- 案例 3：插画图形 -->
-          <article data-reveal data-category="illustration" data-title="自然观察 · 系列插画"
+          <!-- 案例 3：品牌设计 -->
+          <article data-reveal data-category="design" data-title="新芽教育 · Logo 与品牌设计"
             data-image="https://picsum.photos/seed/proj-3/900/600"
-            data-category-text="插画图形" data-desc="为一本自然科普杂志创作的月度主题系列插画，以细腻的植物与动物形象呼应季节变化，覆盖封面与内页插画共 24 幅。"
-            data-tags="主题插画, 杂志插图" class="group rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all bg-white">
-            <img src="https://picsum.photos/seed/proj-3/800/500" alt="系列插画项目占位图" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            data-category-text="品牌设计" data-desc="为一家教育机构完成 Logo 与完整品牌视觉，覆盖课件模板、官网与线下物料，风格统一且辨识度高。"
+            data-tags="Logo, VI, 视觉规范" class="group rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all bg-white">
+            <img src="https://picsum.photos/seed/proj-3/800/500" alt="品牌设计项目占位图" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             <div class="p-6">
-              <span class="text-xs font-semibold text-primary">插画图形</span>
-              <h3 class="mt-2 text-lg font-bold text-slate-900">自然观察 · 系列插画</h3>
-              <p class="mt-2 text-sm text-slate-500">自然杂志的主题系列插画。</p>
+              <span class="text-xs font-semibold text-primary">品牌设计</span>
+              <h3 class="mt-2 text-lg font-bold text-slate-900">新芽教育 · Logo 与品牌设计</h3>
+              <p class="mt-2 text-sm text-slate-500">Logo、VI 与完整品牌视觉。</p>
               <button data-open-detail class="mt-4 text-sm font-semibold text-primary hover:text-primary-light">查看详情 →</button>
             </div>
           </article>
 
-          <!-- 案例 4：品牌视觉 -->
-          <article data-reveal data-category="brand" data-title="山海茶事 · 品牌重塑"
+          <!-- 案例 4：网站开发 -->
+          <article data-reveal data-category="website" data-title="知味食谱 · 内容独立站"
             data-image="https://picsum.photos/seed/proj-4/900/600"
-            data-category-text="品牌视觉" data-desc="为传统茶饮品牌进行形象升级，保留东方美学的同时融入现代极简表达，新形象上线后吸引了更多年轻客群。"
-            data-tags="品牌升级, 视觉识别, 门店物料" class="group rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all bg-white">
-            <img src="https://picsum.photos/seed/proj-4/800/500" alt="品牌重塑项目占位图" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            data-category-text="网站开发" data-desc="美食内容独立站，支持文章分类、关键词检索与会员订阅，注重阅读体验与移动端适配。"
+            data-tags="内容站, 检索, 会员" class="group rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all bg-white">
+            <img src="https://picsum.photos/seed/proj-4/800/500" alt="内容独立站项目占位图" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             <div class="p-6">
-              <span class="text-xs font-semibold text-primary">品牌视觉</span>
-              <h3 class="mt-2 text-lg font-bold text-slate-900">山海茶事 · 品牌重塑</h3>
-              <p class="mt-2 text-sm text-slate-500">传统茶饮品牌的形象升级。</p>
+              <span class="text-xs font-semibold text-primary">网站开发</span>
+              <h3 class="mt-2 text-lg font-bold text-slate-900">知味食谱 · 内容独立站</h3>
+              <p class="mt-2 text-sm text-slate-500">美食内容与会员订阅站点。</p>
               <button data-open-detail class="mt-4 text-sm font-semibold text-primary hover:text-primary-light">查看详情 →</button>
             </div>
           </article>
 
-          <!-- 案例 5：数字产品 -->
-          <article data-reveal data-category="product" data-title="企业数据后台 · 设计系统"
+          <!-- 案例 5：小程序开发 -->
+          <article data-reveal data-category="miniprogram" data-title="预约工坊 · 服务预约小程序"
             data-image="https://picsum.photos/seed/proj-5/900/600"
-            data-category-text="数字产品" data-desc="为一家 SaaS 企业搭建可复用的后台设计系统，统一组件规范与视觉语言，显著提升了多业务线的研发协作效率。"
-            data-tags="设计系统, 组件库, 后台设计" class="group rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all bg-white">
-            <img src="https://picsum.photos/seed/proj-5/800/500" alt="设计系统项目占位图" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            data-category-text="小程序开发" data-desc="面向服务类商家的小程序，支持服务排期、预约下单、到店提醒与订单管理，降低人工排期成本。"
+            data-tags="预约, 排期, 提醒" class="group rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all bg-white">
+            <img src="https://picsum.photos/seed/proj-5/800/500" alt="服务预约小程序项目占位图" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             <div class="p-6">
-              <span class="text-xs font-semibold text-primary">数字产品</span>
-              <h3 class="mt-2 text-lg font-bold text-slate-900">企业数据后台 · 设计系统</h3>
-              <p class="mt-2 text-sm text-slate-500">可复用的后台设计系统与组件规范。</p>
+              <span class="text-xs font-semibold text-primary">小程序开发</span>
+              <h3 class="mt-2 text-lg font-bold text-slate-900">预约工坊 · 服务预约小程序</h3>
+              <p class="mt-2 text-sm text-slate-500">服务商家预约与排期小程序。</p>
               <button data-open-detail class="mt-4 text-sm font-semibold text-primary hover:text-primary-light">查看详情 →</button>
             </div>
           </article>
 
-          <!-- 案例 6：插画图形 -->
-          <article data-reveal data-category="illustration" data-title="城市漫游 · 手绘地图"
+          <!-- 案例 6：品牌设计 -->
+          <article data-reveal data-category="design" data-title="城市音乐节 · 海报与视觉"
             data-image="https://picsum.photos/seed/proj-6/900/600"
-            data-category-text="插画图形" data-desc="以手绘风格绘制城市漫步主题插画地图，标注地标与特色小店，被本地文创市集采用为限定周边。"
-            data-tags="手绘插画, 文创周边" class="group rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all bg-white">
-            <img src="https://picsum.photos/seed/proj-6/800/500" alt="手绘地图项目占位图" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            data-category-text="品牌设计" data-desc="音乐节系列海报与现场视觉物料，整体风格统一、具有传播力，适用于线上传播与线下布置。"
+            data-tags="海报, 插画, 活动视觉" class="group rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all bg-white">
+            <img src="https://picsum.photos/seed/proj-6/800/500" alt="音乐节海报项目占位图" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             <div class="p-6">
-              <span class="text-xs font-semibold text-primary">插画图形</span>
-              <h3 class="mt-2 text-lg font-bold text-slate-900">城市漫游 · 手绘地图</h3>
-              <p class="mt-2 text-sm text-slate-500">城市漫步主题的手绘插画地图。</p>
+              <span class="text-xs font-semibold text-primary">品牌设计</span>
+              <h3 class="mt-2 text-lg font-bold text-slate-900">城市音乐节 · 海报与视觉</h3>
+              <p class="mt-2 text-sm text-slate-500">音乐节系列海报与现场视觉。</p>
               <button data-open-detail class="mt-4 text-sm font-semibold text-primary hover:text-primary-light">查看详情 →</button>
             </div>
           </article>
@@ -223,10 +223,10 @@
     <div class="max-w-6xl mx-auto px-5 py-14 grid md:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-2 font-extrabold text-xl text-white">
-          <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-primary text-white">李</span>
-          <span>李明</span>
+          <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-primary text-white">筑</span>
+          <span>筑巡工坊</span>
         </div>
-        <p class="mt-4 text-sm leading-relaxed text-slate-400">资深视觉与品牌设计师，用专业与热情帮助品牌被看见、被记住。</p>
+        <p class="mt-4 text-sm leading-relaxed text-slate-400">独立工程师，专注网站、小程序与品牌设计的开发与交付。</p>
       </div>
       <div>
         <h4 class="text-white font-semibold">快捷导航</h4>
@@ -240,7 +240,7 @@
       <div>
         <h4 class="text-white font-semibold">联系方式</h4>
         <ul class="mt-4 space-y-2 text-sm text-slate-400">
-          <li>邮箱：hello@example.com</li>
+          <li>邮箱：2682246988@qq.com</li>
           <li>电话：+86 138-0000-0000</li>
           <li>地址：北京市朝阳区（示例）</li>
         </ul>
@@ -248,7 +248,7 @@
     </div>
     <div class="border-t border-slate-800">
       <div class="max-w-6xl mx-auto px-5 py-5 text-center text-xs text-slate-500">
-        © <span data-year>2026</span> 李明 · 保留所有权利
+        © <span data-year>2026</span> 筑巡工坊 · 保留所有权利
       </div>
     </div>
   </footer>
